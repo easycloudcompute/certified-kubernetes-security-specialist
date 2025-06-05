@@ -62,7 +62,6 @@ sudo apt-get update
 sudo apt-mark hold kubelet kubeadm kubectl
 systemctl enable --now kubelet
 ```
-
 #### Step 4 - Initialize Cluster with kubeadm:
 ```sh
 kubeadm init --pod-network-cidr=192.168.0.0/16 --kubernetes-version=1.32.0
@@ -82,6 +81,9 @@ kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1
 
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/custom-resources.yaml
 ```
+
+*** Note : Steps 1 - Step 6 are performed on both control plane and worked nodes
+
 ####  7 - Verification:
 ```sh
 kubectl get nodes

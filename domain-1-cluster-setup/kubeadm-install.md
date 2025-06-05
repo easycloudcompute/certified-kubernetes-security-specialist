@@ -82,7 +82,7 @@ kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/custom-resources.yaml
 ```
 
-*** Note : Steps 1 - Step 6 are performed on both control plane and worked nodes
+*** Note : Steps 1 - Step 6 are performed on both control plane and worker nodes
 
 ####  7 - Verification:
 ```sh

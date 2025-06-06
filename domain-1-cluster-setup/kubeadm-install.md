@@ -75,16 +75,17 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```sh
 kubectl taint nodes --all node-role.kubernetes.io/control-plane-
 ```
-#### Step 6 - Install Network Addon (Calico):
+
+*** Note : Steps 1 - Step 5 are performed on both control plane and worker nodes
+
+#### Step 6 - Install Network Addon (Calico): [ on control plane only ]
 ```sh
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/tigera-operator.yaml
 
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/custom-resources.yaml
 ```
 
-*** Note : Steps 1 - Step 6 are performed on both control plane and worker nodes
-
-####  7 - Verification:
+####  7 - Verification: [ on control plane only ]
 ```sh
 kubectl get nodes
 kubectl run nginx --image=nginx
